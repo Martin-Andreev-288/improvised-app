@@ -3,7 +3,8 @@ import "./App.css";
 import MovieCard from "./components/MovieCard";
 import { type Movie } from "./types.ts";
 
-const API_URL = "https://www.omdbapi.com?apikey=YOUR_API_KEY";
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+const API_URL = `https://www.omdbapi.com?apikey=${API_KEY}`;
 
 const App: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
